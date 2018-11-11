@@ -1,3 +1,7 @@
 [submodule "themes/beautifulhugo"]
 	path = themes/beautifulhugo
 	url = git@github.com:danedmunds/beautifulhugo.git
+[submodule "public"]
+	path = public
+	url = git@github.com:danedmunds/danedmunds.github.io.git
+	branch = master
