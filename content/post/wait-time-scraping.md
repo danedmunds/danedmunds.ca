@@ -3,7 +3,7 @@ title: "Wait Time Scraping"
 date: 2020-02-02T12:53:17-05:00
 ---
 
-We recently had to visit the children's hospital here in Ottawa. We were lucky and were able to go early on a Sunday morning and didn't have to wait too long to be seen and treated. It made me curious what the wait time would have been had we not gone first thing in the morning. It also made me curious when the best time to go to the hospital would be as well as how wait times change of the week.
+We recently had to visit the children's hospital here in Ottawa. We were lucky and were able to go early on a Sunday morning and didn't have to wait too long to be seen and treated. It made me curious what the wait time would have been had we not gone first thing in the morning. It also made me curious when the best time to go to the hospital would be as well as how wait times change during the week.
 
 # TL;DR
 
@@ -62,7 +62,7 @@ echo ${DATE},${TIMES}
 
 *If you don't know about [jq it's definitely worth checking out](https://stedolan.github.io/jq/). It's a cool command line tool for manipulating JSON*
 
-Now that I had a script to generate a CSV line I needed a way to run it every 15 minutes so I could grab the latest data. I knew cron jobs were a way to run periodic tasks and after some research a setup my own.
+Now that I had a script to generate a CSV line I needed a way to run it every 15 minutes so I could grab the latest data. I knew cron jobs were a way to run periodic tasks and after some research I setup my own.
 
 Run `crontab -e` to add or edit a cron job. 
 
@@ -74,7 +74,7 @@ I added the following job:
 
 Now every 15 minutes (on the 15s) I would scrape the wait times and append them to a csv file that I could import to Google Sheets or Excel.
 
-After spending a couple days coping and pasting the data to a spreadsheet I knew I needed to do something to auto update my sheet instead.
+After spending a couple days copying and pasting the data to a spreadsheet I knew I needed to do something to auto update my sheet instead.
 
 To do this I needed to figure out an automated way to update Google Sheets. I had hoped that they would have personal API keys but I couldn't find one. Instead I had to register an app for API access. 
 
@@ -90,7 +90,7 @@ Below are the instructions to obtain the credentials needed...
 - Enable the Sheets API
 ![enable sheets](/images/enablesheets.png)
 - First you need to configure the consent screen for the app, create an external consent screen, add the `../auth/spreadsheets ` scope
-- Next create crendentials, you need to use OAuth Client ID
+- Next create credentials, you need to use OAuth Client ID
 ![create credentials](/images/createcreds.png)
 - For the type select "Other"
 ![create oauth client](/images/createoauth.png)
