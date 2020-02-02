@@ -18,6 +18,7 @@ pygmentsCodefencesGuessSyntax = true
   logo = "img/avatar-icon.png"
   favicon = "img/favicon.ico"
   dateFormat = "January 2, 2006"
+  mainSections = ["post","posts"]
   commit = false
   rss = true
   comments = true
